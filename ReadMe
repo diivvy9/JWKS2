@@ -1,0 +1,54 @@
+JWT JWKS Server is a Node.js based application designed for distributing public keys, each marked with a unique identifier (kid), to validate JSON Web Tokens (JWTs). This server incorporates key expiration features to bolster security and offers an authentication route for the generation of JWTs.
+
+Table of Contents
+
+Introduction
+System Requirements
+Setting Up
+How to Use
+Configuration Details
+Launching the Server
+API Endpoints
+/jwks
+/auth
+How to Test
+How to Contribute
+Licensing Information
+Introduction
+System Requirements: To deploy this application, your system must have the following:
+
+Node.js (version 14 or above)
+npm (Node Package Manager)
+
+Setting Up
+To get started, clone the repository to your machine with:
+
+git clone https://github.com/your-username/jwt-jwks-server.git
+
+Then, move to the project folder:
+cd jwt-jwks-server
+
+And install the necessary dependencies:
+
+npm install
+
+How to Use
+Configuration Details: The server settings, including RSA key pair management, can be adjusted in the server.js file. Initially, the server creates a single RSA key pair for demonstration. For real-world applications, a more comprehensive key management approach is advisable.
+
+Launching the Server
+To initiate the server, execute:
+
+npm start
+
+The server operates on port 8080 by default, though this can be modified in the server.js file.
+
+API Endpoints
+
+/jwks Endpoint: This endpoint delivers public keys in the JWKS format, exclusively providing those that remain valid.
+/auth Endpoint: Utilized for authentication and the creation of JWTs, this endpoint returns a valid, signed JWT upon a POST request. If an "expired" query is made, a JWT signed with an expired key and timestamp is issued.
+
+How to Contribute
+We welcome contributions. Should you encounter problems or have suggestions for improvements, feel free to file an issue or submit a pull request.
+
+Licensing Information
+This project is licensed under the MIT License. For more details, refer to the LICENSE file.
